@@ -1,0 +1,79 @@
+/* Apply the Montserrat font to the body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #1b1b1b; /* Primary Background */
+    color: #eaeaea; /* Light Text */
+    font-family: 'Montserrat', sans-serif; /* Montserrat font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Make the container wider */
+.container {
+    text-align: center;
+    background-color: #2e2e2e; /* Secondary Background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 600px; /* Increased width */
+    max-width: 100%;
+}
+
+h1 {
+    color: #eaeaea; /* Light Gray for Header */
+    margin-bottom: 20px;
+    font-weight: 600;
+    
+}
+
+p {
+    color: #a1a1a1; /* Muted Text */
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+/* Style for the boxes */
+.box-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    width: 45%;
+    height: 150px;
+    background-color: #424242; /* Darker background for boxes */
+    color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.student-box {
+    background-color: #006064; /* Green for student */
+}
+
+.parent-box {
+    background-color: #006064; /* Red for parent */
+}
+
+.box h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box:hover {
+    background-color: #616161; /* Hover Effect */
+}
