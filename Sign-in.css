@@ -1,4 +1,3 @@
-/* Apply the Montserrat font to the body */
 * {
     margin: 0;
     padding: 0;
@@ -7,66 +6,76 @@
 }
 
 body {
-    background-color: #1b1b1b; /* Primary Background */
-    color: #eaeaea; /* Light Text */
-    font-family: 'Montserrat', sans-serif; /* Montserrat font */
+    background-color: #1b1b1b; /* Dark background */
+    color: #eaeaea; /* Light text for contrast */
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
-/* Make the container wider */
+/* Stylish container with shadow and rounded corners */
 .container {
     text-align: center;
-    background-color: #2e2e2e; /* Secondary Background */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 600px; /* Increased width */
+    background-color: #2e2e2e; /* Slightly lighter background for contrast */
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
+    width: 450px;
     max-width: 100%;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeIn 1s forwards ease-in-out; /* Smooth fade-in animation */
 }
 
 h1 {
-    color: #eaeaea; /* Light Gray for Header */
-    margin-bottom: 20px;
+    color: #eaeaea;
+    margin-bottom: 10px;
     font-weight: 600;
-    
+    font-size: 26px;
 }
 
 p {
-    color: #a1a1a1; /* Muted Text */
-    margin-bottom: 30px;
+    color: #a1a1a1; /* Muted text for subheading */
+    margin-bottom: 40px;
     font-weight: 400;
+    font-size: 14px;
 }
 
-/* Style for the boxes */
+/* Flexbox for a clean, centered layout */
 .box-container {
     display: flex;
     justify-content: space-between;
+    gap: 20px; /* Space between the boxes */
 }
 
 .box {
     width: 45%;
-    height: 150px;
-    background-color: #424242; /* Darker background for boxes */
-    color: #eaeaea;
+    height: 120px;
+    background-color: #424242; /* Neutral dark color */
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
+    border-radius: 12px;
+    transition: all 0.3s ease, transform 0.3s ease;
     font-size: 18px;
     font-weight: 600;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    opacity: 0;
+    animation: slideUp 0.6s forwards ease-in-out; /* Smooth slide-up animation */
 }
 
+/* Apply animation delay to boxes */
 .student-box {
-    background-color: #006064; /* Green for student */
+    animation-delay: 0.4s;
 }
 
 .parent-box {
-    background-color: #006064; /* Red for parent */
+    animation-delay: 0.6s;
 }
 
 .box h2 {
@@ -74,6 +83,49 @@ p {
     font-weight: bold;
 }
 
+/* Button hover effects for a professional feel */
 .box:hover {
-    background-color: #616161; /* Hover Effect */
+    transform: translateY(-5px); /* Slight lift on hover */
+    background-color: #555; /* Darker shade on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Pronounced shadow */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 40px;
+    }
+
+    .box-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .box {
+        width: 100%;
+    }
 }
