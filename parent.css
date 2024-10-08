@@ -18,6 +18,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -54,11 +55,11 @@ h1 {
 .signup-form {
     background-color: #2e2e2e;
     padding: 40px 30px;
-    border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
     animation: slideDown 1.2s ease forwards;
+    border-radius: 5px;
 }
 
 .signup-form h2 {
@@ -86,10 +87,10 @@ input {
     padding: 12px 15px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
     background-color: #fff;
     color: #333;
     transition: background-color 0.3s ease;
+    border-radius: 2px;
 }
 
 input:focus {
@@ -101,10 +102,9 @@ input:focus {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #3A6073;
+    background-color: teal;
     color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
@@ -112,7 +112,7 @@ button {
 }
 
 button:hover {
-    background-color: #16222A;
+    background-color: #3A6073;
     transform: translateY(-2px);
 }
 
@@ -166,4 +166,3 @@ footer {
         font-size: 16px;
     }
 }
-
