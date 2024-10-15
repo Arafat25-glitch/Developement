@@ -10,7 +10,7 @@
     }
 }
 
-*{ font-family: 'Montserrat', sans-serif;
+*{ font-family: 'Playfair Display', serif;
 }
 
 @keyframes fadeInButton {
@@ -74,6 +74,7 @@ h2 {
     color: #fff;
     opacity: 0;
     animation: fadeIn 1.5s ease forwards;
+    font-family: 'Playfair Display', serif;
 }
 
 /* Form group layout and input fields */
