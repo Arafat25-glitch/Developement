@@ -12,27 +12,30 @@
 body {
     background-color: #1b1b1b; /* Dark background */
     color: #eaeaea; /* Light text for contrast */
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-y: auto; /* Enable scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 /* Header Styles */
-header {
+#sign-up-header, #student-header {
     text-align: center;
     padding: 40px 20px 20px 20px;
 }
 
-header h1 {
+#sign-up-header h1, #student-title {
     font-family: 'Playfair Display', serif;
     font-size: 48px;
     color: #eaeaea;
     animation: fadeIn 1.2s ease forwards;
 }
 
+#student-title {
+    animation-delay: 0.2s;
+}
+
 /* Main Container */
-main {
+#sign-up-main, #student-container {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -40,7 +43,7 @@ main {
     padding: 20px;
 }
 
-.container {
+#sign-up-container, #student-form {
     background-color: #2e2e2e;
     padding: 60px 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -49,34 +52,48 @@ main {
     text-align: center;
     animation: fadeInUp 1s ease forwards;
     border-radius: 6px;
+    opacity: 0;
 }
 
-.container h2 {
+#sign-up-container {
+    animation-delay: 0.5s;
+}
+
+#student-form {
+    animation-delay: 0.7s;
+}
+
+/* Headings */
+#sign-up-container h2, #student-heading {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     margin-bottom: 10px;
     color: #fff;
 }
 
-.container p {
+#student-heading {
+    margin-bottom: 30px;
+}
+
+/* Paragraph Styles */
+#sign-up-container p, #student-login-message {
     color: #a1a1a1;
     margin-bottom: 40px;
     font-size: 16px;
     font-weight: 400;
-   
 }
 
 /* Box Container */
-.box-container {
+#sign-up-box-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.box {
+.sign-up-box {
     flex: 1 1 45%;
-    height: 180px; 
+    height: 180px;
     background-color: #424242;
     color: #ffffff;
     display: flex;
@@ -84,7 +101,7 @@ main {
     align-items: center;
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: 40px 20px; 
+    padding: 40px 20px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
@@ -92,47 +109,112 @@ main {
     opacity: 0;
 }
 
-/* Apply animation delay to boxes */
-.student-box {
+/* Animations */
+#sign-up-student-box {
     animation-delay: 0.4s;
-    background-color: #3A6073;
-    border-radius: 6px;
 }
 
-.parent-box {
+#sign-up-parent-box {
     animation-delay: 0.6s;
-    background-color: #3A6073;
-    border-radius: 6px;
-}
-
-.box h3 {
-    font-size: 22px; 
-    font-weight: 600;
-    z-index: 1;
-   
 }
 
 /* Hover Effects */
-.box:hover {
+.sign-up-box:hover {
     background-color: #555;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
 }
 
-/* Responsive Design for smaller screens */
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    background-color: #f0f0f0;
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: teal;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #3A6073;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Links */
+#student-login-link, .message a {
+    color: #9e0d90;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#student-login-link:hover, .message a:hover {
+    color: #ff4081;
+}
+
+/* Footer */
+#sign-up-footer, #student-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #121212;
+    color: #b3b3b3;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .box-container {
+    #sign-up-box-container {
         flex-direction: column;
     }
 
-    .box {
+    .sign-up-box {
         flex: 1 1 100%;
         height: 160px;
     }
+
+    #sign-up-header h1, #student-title {
+        font-size: 36px;
+    }
+
+    #sign-up-container, #student-form {
+        padding: 40px 20px;
+    }
+
+    #sign-up-container h2, #student-heading {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 16px;
+    }
 }
 
-
-/* Animations */
+/* Keyframes for Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -166,6 +248,146 @@ main {
     }
 }
 
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Keyframes for animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1b1b1b;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    animation: slideDown 1.2s ease forwards;
+    color: #fff;
+}
+
+/* Container Styles */
+.parent-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.parent-signup-form {
+    background-color: #2e2e2e;
+    padding: 40px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    animation: slideDown 1.2s ease forwards;
+    border-radius: 5px;
+}
+
+.parent-signup-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+}
+
+/* Form Group Styles */
+.parent-form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #fff;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease;
+    border-radius: 2px;
+}
+
+input:focus {
+    background-color: #f0f0f0;
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: teal;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #3A6073;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Message Styles */
+.parent-message {
+    text-align: center;
+    margin-top: 15px;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.parent-message a {
+    color: #9e0d90;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.parent-message a:hover {
+    color: #ff4081;
+}
+
 /* Footer Styles */
 footer {
     text-align: center;
@@ -173,40 +395,26 @@ footer {
     background-color: #121212;
     color: #b3b3b3;
     font-size: 14px;
-    
-}
-
-footer p {
-    margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 40px 20px;
-    }
-
-    .box-container {
-        flex-direction: column;
-    }
-
-    .box {
-        flex: 1 1 100%;
-    }
-
-    header h1 {
+@media (max-width: 500px) {
+    h1 {
         font-size: 36px;
     }
 
-    .container h2 {
-        font-size: 28px;
+    .parent-signup-form {
+        padding: 30px 20px;
     }
 
-    .container p {
-        font-size: 14px;
+    .parent-signup-form h2 {
+        font-size: 24px;
     }
 
-    .box h3 {
-        font-size: 18px;
+    button {
+        font-size: 16px;
     }
 }
+
+
